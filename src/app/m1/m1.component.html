@@ -1,3 +1,122 @@
-<p>
-  m1 works!
-</p>
+<!-- <mat-card>
+
+<div class="example-container">
+
+  <mat-form-field>
+    <input matInput placeholder="Name" #name> 
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Age"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+      <mat-select placeholder="Qualification" [formControl]="Qualification" multiple>
+        <mat-option value="option1">BCA</mat-option>
+        <mat-option value="option2">B.E</mat-option>
+        <mat-option value="option3">Bsc</mat-option>
+        <mat-option value="option4">MCA</mat-option>
+        <mat-option value="option5">MBA</mat-option>
+        <mat-option value="option6">M.E</mat-option>
+        <mat-option value="option7">M.Tech</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="City"#city> 
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-select placeholder="State">
+            <mat-option value="TamilNadu">TamilNadu</mat-option>
+            <mat-option value="Karnataka">Karnataka</mat-option>
+            <mat-option value="Andhra">Andhra</mat-option>
+            <mat-option value="Kerala">Kerala</mat-option>
+            <mat-option value="Maharashtra">Maharashtra</mat-option>
+
+            <mat-option value="Alberta">Alberta</mat-option>
+            <mat-option value="Manitoba">Manitoba</mat-option>
+            <mat-option value="Ontario">Ontario</mat-option>
+            <mat-option value="Quebec">Quebec</mat-option>
+            <mat-option value="Totonto">Totonto</mat-option>
+
+
+            <mat-option value="Alabama">Alabama</mat-option>
+            <mat-option value="Alaska">Alaska</mat-option>
+            <mat-option value="Arizona">Arizona</mat-option>
+            <mat-option value="Arkansas">Arkansas</mat-option>
+            <mat-option value="California">California</mat-option>
+            <mat-option value="Colorado">Colorado</mat-option>
+            <mat-option value="Connecticut">Connecticut</mat-option>
+            <mat-option value="Delaware">Delaware</mat-option>
+            <mat-option value="Florida">Florida</mat-option>
+            
+          </mat-select>
+        </mat-form-field>
+
+    <mat-radio-group>
+        <mat-radio-button value="Yes">Yes</mat-radio-button>
+        
+        <mat-radio-button value="No">No </mat-radio-button>
+      </mat-radio-group>
+
+      <mat-slider></mat-slider>
+
+      <button mat-raised-button color="primary">submit</button>
+
+      <mat-form-field>
+          <input matInput value="Disco party!" placeholder="Message" #message>
+        </mat-form-field>
+        
+        <mat-form-field>
+          <input matInput value="Dance" placeholder="Action" #action>
+        </mat-form-field>
+        
+        <button mat-raised-button color="primary" (click)="openSnackBar(name.value, city.value)">Show snack-bar</button>
+        
+
+
+</div>
+</mat-card>
+
+
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+        bred for hunting.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card> -->
+  
+
+
+   <mat-card>
+
+<div class="example-container">
+
+  <mat-form-field>
+    <input matInput placeholder="username" [(ngModel)]="loginReq.username">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="password" [(ngModel)]="loginReq.password">
+  </mat-form-field>
+  <button mat-raised-button color="primary"(click)="login()">login</button>
+  <!-- <button mat-button (click)="login()">login</button> -->
+
+
+</div>
+</mat-card>
+
+
