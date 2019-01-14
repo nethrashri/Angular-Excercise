@@ -19,11 +19,15 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
+import { RouterModule, Routes } from '@angular/router';
 
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 // import { BrowserModule }    from '@angular/platform-browser';
 
 
@@ -57,7 +61,10 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     // BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    NgxSpinnerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

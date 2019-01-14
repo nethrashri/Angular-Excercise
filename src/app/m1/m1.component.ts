@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {FormControl} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, RouterModule, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { from } from 'rxjs';
+import 'rxjs/add/operator/timeout'
+
+
 
 
 //import { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } from 'constants';
@@ -14,34 +20,62 @@ import { HttpClient } from '@angular/common/http';
 })
 export class M1Component implements OnInit {
 loginReq:any={};
-loginurl: string
-  constructor(public snackBar: MatSnackBar,public http:HttpClient) { }
+loginurl: string;
+loginRes: any={};
+  constructor(public snackBar: MatSnackBar,public http:HttpClient, public router: Router, private spinner: NgxSpinnerService) { }
 
 
 
   ngOnInit() {
     console.log("Came  inside M1");
     
+   
+  }
 //     var i = 1;
 //     {
 //     for(let i = 0; i<10; i++)
 
 // console.log(i*2);
 
-    }
+    
 //   }
 
   login() {
-
+    this.spinner.show();
+ 
     this.loginurl= 'http://192.168.0.114:10010/login';
-    this.http.post(this.loginurl,this.loginReq).subscribe(res =>{
-      console.log(res)
+    this.http.post(this.loginurl,this.loginReq)
+    .timeout(200)
+    .subscribe(res =>{
+
+      // setTimeout(() => {
+        /** spinner ends after 5 seconds */
+        this.spinner.hide();
+
+        console.log(res);
+        this.loginRes= res;
+        if (this.loginRes.status == 'success')
+        {
+          this.router.navigate (['m2']);
+        }
+        else
+        {     this.snackBar.open(this.loginRes.status , 'Error', {
+          duration: 2000,
+        });
+    }
+
+//    }, 5000);
+
+     
     }), ()=>{
-    
+      console.log("inside error");
+      this.snackBar.open("Error in Backed" , 'Error', {
+        duration: 2000,
+      });
     }
     
-   console.log("login id is " + this.loginReq.username);
-   console.log("password is " + this.loginReq.password);
+   console.log("login id is " + this.loginReq.id);
+   console.log("password is " + this.loginReq.pwd);
 
   }
 
